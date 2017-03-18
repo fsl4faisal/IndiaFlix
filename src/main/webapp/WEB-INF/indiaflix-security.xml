@@ -13,7 +13,9 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="faisal" password="faisal" authorities="ROLE_ADMIN" />
+				<user name="faisal" password="faisal" authorities="ROLE_ADMIN,ROLE_FREE_USER,ROLE_PREMIUM_USER" />
+				<user name="user1" password="user1" authorities="ROLE_FREE_USER"/>
+				<user name="user2" password="user2" authorities="ROLE_PREMIUM_USER"/>
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
