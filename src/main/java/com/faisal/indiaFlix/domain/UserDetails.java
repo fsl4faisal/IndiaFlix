@@ -4,27 +4,29 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Entity;
 
 @Entity
+@Table(name="USER_DETAILS")
 public class UserDetails {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column
+	@Column(name="ID")
 	int id;
 	
-	@Column
+	@Column(name="FIRST_NAME")
 	String firstName;
 	
-	@Column
+	@Column(name="LAST_NAME")
 	String lastName;
 	
-	@Column
+	@Column(name="EMAIL_ID")
 	String emailId;
 	
-	@Column
+	@Column(name="USER_TYPE")
 	String userType;
 	
 	public UserDetails(){}

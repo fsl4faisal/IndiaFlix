@@ -5,18 +5,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="AUTHORITIES")
 public class Authorities {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column
+	@Column(name="ID")
 	int id;
 	
-	@Column
+	@Column(name="USER_NAME")
 	String username;
 	
-	@Column
+	@Column(name="AUTHORITY")
 	String authority;
 	
 	public Authorities(){}

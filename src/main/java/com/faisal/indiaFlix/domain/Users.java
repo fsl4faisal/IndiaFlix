@@ -5,22 +5,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="USERS")
 public class Users {
 	
 	@Id
-	@Column
+	@Column(name="USER_ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int userId;
 	
-	@Column
+	@Column(name="USER_NAME")
 	String username;
 	
-	@Column
+	@Column(name="PASSWORD")
 	String password;
 	
-	@Column
+	@Column(name="ENABLED")
 	int enabled;
 	
 	public Users(){}

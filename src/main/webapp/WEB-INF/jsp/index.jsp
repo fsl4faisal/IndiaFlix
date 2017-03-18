@@ -8,7 +8,25 @@
 <title>Welcome</title>
 </head>
 <body>
-Welcome to the IndiaFlix..!
+
+<sec:authorize ifAllGranted="ROLE_GUEST">
+	<a href="<c:url value="/spring_security_login"/>">Login</a>
+</sec:authorize>
+<br/>
+
+	Welcome <sec:authentication property="name"/>
+
+<br/>
+
+<sec:authorize ifAnyGranted="ROLE_ADMIN,ROLE_FREE_USER,ROLE_PREMIUM_USER">
+	<a href="<c:url value="/j_spring_security_logout"/>">Logout</a>
+</sec:authorize>
+<br/>
+
+<sec:authorize ifAllGranted="ROLE_GUEST">
+	<a href="#">Register here</a>
+</sec:authorize>
+<br/>
 
 </body>
 </html>

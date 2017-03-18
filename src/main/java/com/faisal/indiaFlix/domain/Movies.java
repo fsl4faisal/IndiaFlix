@@ -5,24 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="MOVIES")
 public class Movies {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column
+	@Column(name="ID")
 	int id;
 	
-	@Column
+	@Column(name="NAME")
 	String name;
 	
-	@Column
+	@Column(name="YEAR_OF_RELEASE")
 	int yearOfRelease;
 	
-	@Column
+	@Column(name="DESCRIPTION")
 	String description;
 	
-	@Column
+	@Column(name="GENRE")
 	String genre;
 	
 	public Movies(){}

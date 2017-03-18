@@ -5,25 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="TV_SERIES")
 public class TvSeries {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column
+	@Column(name="ID")
 	int id;
 	
-	@Column
+	@Column(name="NAME")
 	String name;
 	
-	@Column
+	@Column(name="SEASON")
 	int season;
 	
-	@Column
+	@Column(name="EPISODE")
 	int episode;
 	
-	@Column
+	@Column(name="DESCRIPTION")
 	String description;
 	
 	public TvSeries(){}

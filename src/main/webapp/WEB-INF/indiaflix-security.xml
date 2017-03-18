@@ -6,13 +6,14 @@ http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
 	<http auto-config="true">
-		<intercept-url pattern="/*" access="ROLE_USER,ROLE_GUEST,ROLE_ADMIN" />
+		<intercept-url pattern="/index" access="ROLE_GUEST,ROLE_ADMIN,ROLE_FREE_USER,ROLE_PREMIUM_USER" />
+		<anonymous username="guest" granted-authority="ROLE_GUEST"/>
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="faisal" password="faisal" authorities="ROLE_ADMIN,ROLE_USER" />
+				<user name="faisal" password="faisal" authorities="ROLE_ADMIN" />
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
